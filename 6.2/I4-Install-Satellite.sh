@@ -9,7 +9,7 @@ LOCATION="Laptop"
 USERNAME="admin"
 PASSWORD="redhat"
 
-$YUM install satellite
+$YUM install -y satellite
 
 set -x
 satellite-installer --scenario=satellite  \
