@@ -22,6 +22,7 @@ satellite-installer --scenario=satellite  \
 --foreman-proxy-dns false  \
 --foreman-proxy-tftp true  \
 --foreman-initial-organization $ORG  \
---foreman-initial-location $LOCATION
+--foreman-initial-location $LOCATION  \
+--enable-foreman-plugin-openscap
 set +x
 
