@@ -9,11 +9,7 @@ LOCATION="Laptop"
 USERNAME="admin"
 PASSWORD="redhat"
 
-#$SM repos --disable="*"
-#$SM repos --enable=rhel-7-server-rpms --enable=rhel-server-rhscl-7-rpms --enable=rhel-7-server-satellite-6.2-rpms
-#$YUM clean all
-#$YUM update
-#$YUM install satellite
+$YUM install satellite
 
 set -x
 satellite-installer --scenario=satellite  \
