@@ -18,6 +18,7 @@ satellite-installer --scenario=satellite  \
 --foreman-proxy-dhcp	true  \
 --foreman-proxy-dhcp-interface enp0s3  \
 --foreman-proxy-dhcp-gateway 192.168.100.5  \
+--foreman-proxy-dhcp-nameservers 192.168.100.2 \
 --foreman-proxy-dhcp-range "$DHCP_RANGE"  \
 --foreman-proxy-dns false  \
 --foreman-proxy-tftp true  \
@@ -27,5 +28,7 @@ satellite-installer --scenario=satellite  \
 --foreman-plugin-openscap-configure-openscap-repo \
 --katello-enable-ostree=true
 set +x
-
+yum install -y rubygem-foreman_scap_client.noarch
+satellite-installer --enable-foreman-plugin-openscap
+yum install -y puppet-foreman_scap_client
 
